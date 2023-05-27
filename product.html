@@ -1,0 +1,112 @@
+<!--Nurfarah Wahida Binti Yusof
+2021494232
+RCS2514A-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--external css-->
+  <link rel="stylesheet" href="farahmart_styles.css">
+</head>
+<body>
+    <header>
+        <h1>Farah's mart</h1>
+        <h2>Products feature</h2>
+        <h3>Items in Cart:</h3>
+        <ol id="cartItem"></ol>
+
+        <h3>Total Price: RM<span id="totalPrice">0</span></h3>
+    </header>
+
+    <section id="featured-products">
+    <div class="product">
+    <table>
+        <div class="grid-container">
+        <tr>
+            <div class="grid-item">
+                <td>
+                    <img src="product1.jpg" alt="Product 1" width="100%" height="auto">
+                    <h3>Carrot</h3>
+                    <p>Carrots in your diet can provide numerous health benefits and contribute to overall well-being.</p>
+                    <button onclick="addToCart('Carrot', 1.99)">+</button>
+                    <button onclick="cancelItem('Carrot')">-</button>
+                </td>
+            </div>
+            
+            <div class="grid-item">
+                <td>
+                    <img src="product2.jpg" alt="Product 2" width="100%" height="auto">
+                    <h3>Bread</h3>
+                    <p>Bread can be used to make sandwiches, toast, bruschetta, croutons, and various other dishes. </p>
+                    <button onclick="addToCart('Bread', 5.79)">+</button>
+                    <button onclick="cancelItem('Bread')">-</button>
+                </td>
+            </div>
+            
+            <div class="grid-item">
+                <td>
+                    <img src="product3.jpg" alt="Product 3" width="100%" height="auto">
+                    <h3>Mushroom</h3>
+                    <p>Mushrooms can be enjoyed in numerous ways, including sautéing, grilling, roasting, or adding them to soups, stews, pasta dishes, salads, and stir-fries.</p>
+                    <button onclick="addToCart('Mushroom', 3.39)">+</button>
+                    <button onclick="cancelItem('Mushroom')">-</button>
+                </td>
+            </div>
+            
+        </tr>
+        </div>
+    </table>
+    </div>
+    </section>
+
+    <script>
+        var cart = {}; // Initialize an empty object to store cart items
+
+        function addToCart(productName, price) {
+            if (cart[productName]) {
+                cart[productName].quantity++; // Increment the quantity if the item is already in the cart
+            } 
+            else {
+                cart[productName] = {
+                quantity: 1,
+                price: price }; // Add the item to the cart with quantity and price
+            }
+
+            updateCartDisplay();
+        }
+
+        function cancelItem(productName) {
+            if (cart[productName]) {
+                cart[productName].quantity--; // Decrement the quantity of the item
+
+            if (cart[productName].quantity <= 0) 
+                delete cart[productName]; // Remove the item from the cart if the quantity reaches zero
+            }
+
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            var cartItems = document.getElementById("cartItem");
+            var totalPrice = 0;
+            cartItems.innerHTML = ""; // Clear the cart items list
+
+            for (var item in cart) {
+                var listItem = document.createElement("li");
+                listItem.textContent = item + " - Quantity: " + cart[item].quantity;
+                cartItems.appendChild(listItem);
+
+                totalPrice += cart[item].price * cart[item].quantity;
+            }
+
+            document.getElementById("totalPrice").textContent = totalPrice.toFixed(2);
+        }
+    </script>
+
+    <footer>
+        <p>Copyright &copy; 2001. Swanky Retail Sdn. Bhd. 2021494232 (230401-H). All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

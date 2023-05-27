@@ -1,0 +1,126 @@
+/*Nurfarah Wahida Binti Yusof
+2021494232
+RCS2514A*/
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styles */
+header {
+  background-color: #921414;
+  color: #ffffff;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/*listed in one line*/
+ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+/*no underline*/
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Banner styles */
+#home {
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 40px;
+}
+
+#banner h2 {
+  margin-top: 0;
+}
+
+/*button style*/
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #921414;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/*table style*/
+table {
+  width: 95%;
+}
+
+td{
+  text-align: center;
+  border: 5px solid #921414;
+  padding: 50px;
+}
+
+.btn:hover {
+  background-color: #555;
+}
+
+/* Coupon styles */
+#today-deals {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 40px;
+}
+
+/*coupon arrangment*/
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
+  grid-gap: 10px; /* Adjust the gap between pictures */
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+}
+
+/* About Us styles */
+#about {
+  padding: 40px;
+}
+
+/* Privacy Policy styles */
+#policy {
+  background-color: #f4f4f4;
+  padding: 40px;
+}
+
+/* Contact styles */
+#contact {
+  padding: 40px;
+}
+
+#contact form input,
+#contact form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
